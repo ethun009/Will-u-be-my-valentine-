@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Chewy&family=Dancing+Script:wght@400..700&family=Galada&family=Tiro+Bangla:ital@0;1&display=swap');
+
+
 body {
     text-align: center;
     height: 100vh;
@@ -89,6 +92,15 @@ body {
 
 
 
+
+
+
+
+
+
+
+
+
 .hide{
   display: none;
 }
@@ -159,6 +171,8 @@ body {
       box-shadow: -5px -5px 100px rgba(0, 0, 0, 0.4);
       transition: all 0.5s ease;
       z-index: 2;
+      display: flex;
+      flex-direction: column;
   }
 
   .box:hover .card {
@@ -197,7 +211,7 @@ body {
 
   .text {
       position: absolute;
-      font-family: 'Brush Script MT', cursive;
+      font-family: "Dancing Script", serif;
       font-size: 28px;
       text-align: center;
       line-height: 25px;
@@ -239,13 +253,12 @@ body {
   .big-heart {
       display: none;
       position: absolute;
-      width: 70px;
-      height: 70px;
+      width: 40px;
+      height: 40px;
       background-color: #d62828;
       transform: rotate(-45deg);
-      top: 70%;
-      /* Position below the text */
-      left: 55%;
+      bottom: 3%;
+      right: 15%;
       margin-left: -60px;
       margin-top: 0px;
       text-align: center;
@@ -260,19 +273,19 @@ body {
   .big-heart:after {
       content: "";
       position: absolute;
-      width: 70px;
-      height: 70px;
+      width: 40px;
+      height: 40px;
       background-color: #d62828;
       border-radius: 50%;
   }
 
   .big-heart:before {
-      top: -35px;
+      top: -25px;
       left: 0;
   }
 
   .big-heart:after {
-      left: 35px;
+      left: 25px;
       top: 0;
   }
 
@@ -289,8 +302,8 @@ body {
       left: 60%;
       transform: translate(-50%, -50%) rotate(45deg);
       /* Counteract heart rotation */
-      font-family: 'Brush Script MT', cursive;
-      font-size: 24px;
+      font-family: "Chewy", serif;
+      font-size: 20px;
       color: white;
       text-align: center;
       line-height: 1;
@@ -300,7 +313,7 @@ body {
 
   /* Adjust text positioning in expanded state */
   .card.expanded .text {
-      top: 10%;
+      top: 5%;
       left: 50%;
       transform: translateX(-50%);
       margin-bottom: 160px;
@@ -313,6 +326,8 @@ body {
 
   .hearts {
       position: absolute;
+      top:  20%;
+      z-index: 20;
   }
 
 
@@ -454,17 +469,51 @@ body {
 
   .message {
       display: none;
-      font-family: 'Brush Script MT', cursive;
-      font-size: 20px;
-      text-align: center;
+      font-family: "Tiro Bangla", serif;
+      font-size: 15px;
       margin-top: 20px;
       line-height: 1.5;
-  }
+      width: 100%;
+      position: absolute;
+      left: 0;
 
+  }
+.great {
+    display: none;
+    font-family: "Dancing Script", serif;
+      font-size: 20px;
+      position: absolute;
+      margin-top: 20px;
+      padding-left: 20px;
+}
+
+.end {
+    display: none;
+    font-family: "Dancing Script", serif;
+      font-size: 20px;
+      position: absolute;
+      margin-top: 20px;
+}
   .card.expanded .message {
       display: block;
+      top: 28%;
+      padding-left: 20px;
+      width: 80%;
+      left: 50%;
+      transform: translateX(-50%);
+     text-align: center;
+     
   }
+  .card.expanded .great {
+    display: block;
+    top: 20%;
+}
 
+.card.expanded .end {
+    display: block;
+    bottom: 10%;
+    right: 10%;
+}
   /* Reposition heart in expanded state */
   .card.expanded .heart {
       position: absolute;
@@ -476,9 +525,85 @@ body {
 
   /* Adjust original text positioning in expanded state */
   .card.expanded .text {
-      top: 10%;
+      top: 6%;
       left: 50%;
       transform: translateX(-50%);
   }
 
 
+  @media (min-width: 600px) {
+
+    .message {
+        display: none;
+        font-family: "Tiro Bangla", serif;
+        font-size: 25px;
+        margin-top: 20px;
+        line-height: 1.5;
+        width: 100%;
+        position: absolute;
+        left: 0;
+  
+    }
+  .great {
+      display: none;
+      font-family: "Dancing Script", serif;
+        font-size: 35px;
+        position: absolute;
+        margin-top: 20px;
+        padding-left: 50px;
+  }
+  
+  .end {
+      display: none;
+      font-family: "Dancing Script", serif;
+        font-size: 35px;
+        position: absolute;
+        margin-top: 20px;
+  }
+    .card.expanded .message {
+        display: block;
+        top: 28%;
+        padding-left: 20px;
+        width: 80%;
+        left: 50%;
+        transform: translateX(-50%);
+       text-align: center;
+       
+    }
+    .card.expanded .great {
+      display: block;
+      top: 20%;
+  }
+  
+  .card.expanded .end {
+      display: block;
+      bottom: 10%;
+      right: 10%;
+  }
+    /* Reposition heart in expanded state */
+    .card.expanded .heart {
+        position: absolute;
+        top: 75%;
+        left: 50%;
+        transform: translateX(-50%);
+        margin-top: 20px;
+    }
+  
+    /* Adjust original text positioning in expanded state */
+    .card.expanded .text {
+        top: 6%;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .text {
+        position: absolute;
+        font-family: "Dancing Script", serif;
+        font-size: 40px;
+        text-align: center;
+        line-height: 25px;
+        top: 19px;
+        left: 85px;
+        color: #003049;
+    }
+  }
