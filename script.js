@@ -3,7 +3,8 @@ let noCount = 0;
 let noButton = document.getElementById("no");
 let yesButton = document.getElementById("yes");
 let messageText = document.getElementById("message");
-
+let displaybox = document.querySelector('.box');
+let bgblur  = document.querySelector('.blurbg');
 noButton.addEventListener("click", rejectLove);
 yesButton.addEventListener("click", acceptLove);
 
@@ -18,16 +19,19 @@ function rejectLove() {
         noButton.style.display = "none";
     }
 }
-function openWebsite() {
-    window.location.href = "https://ethun009.github.io/Valentines/";
+function opengift() {
+   
+    displaybox.classList.remove('hide');
+    bgblur.classList.remove('hide');
 }
+
 function acceptLove() {
     document.getElementById("valentine").innerHTML = `
         <img src="https://media1.tenor.com/m/aEWN44So2ckAAAAC/kiss-kisses.gif" class="gif">
         <div class="question">YAYAYYAYAYAYAY I LOVE YOU PICCI❤️</div>
-        <h2 class="question">I Have a Gift For U❤️</h2>
+        <h2 class="question">I Have a Message For U❤️</h2>
         <div> <img src="gift.gif" class="gif"></div>
-       <button class="button" id="yes" onclick="openWebsite()">Open</button>
+       <button class="button" id="yes" onclick="opengift()">Open</button>
 
     `;
     launchConfetti();
@@ -72,3 +76,13 @@ function startHeartRain() {
         }, 5000);
     }, 300);
 }
+
+document.querySelector('.box').addEventListener('click', function (event) {
+    const card = document.querySelector('.card');
+    if (!card.classList.contains('expanded')) {
+        card.classList.add('expanded');
+    } else {
+        card.classList.remove('expanded');
+    }
+});
+
